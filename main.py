@@ -8,14 +8,12 @@ def find_users_from_both_days(file1, file2):
 		csv_reader = csv.reader(file)
 		next(csv_reader)
 		for row in csv_reader:
-			# data_list = list(map(int, str(row).strip().split(',')))
 			user_id, product_id = int(row[0]), int(row[1])
 			day1.add(user_id)
 	with open(file2, 'r') as file:
 		csv_reader = csv.reader(file)
 		next(csv_reader)
 		for row in csv_reader:
-			# data_list = list(map(int, str(row).strip().split(',')))
 			user_id, product_id = int(row[0]), int(row[1])
 			if user_id in day1:
 				day2.add(user_id)
